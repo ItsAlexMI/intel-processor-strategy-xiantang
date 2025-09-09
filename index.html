@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla Comparativa de Procesadores Intel - XIANTANG</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        intelBlue: '#0071c5',
+                        intelDark: '#0c293f',
+                        success: '#10b981',
+                        warning: '#f59e0b',
+                        danger: '#ef4444',
+                        info: '#3b82f6'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        
+        .card-shadow {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 5px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #0c293f 0%, #0071c5 100%);
+        }
+        
+        .rating-cell {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .rating-dots {
+            display: flex;
+            gap: 4px;
+        }
+        
+        .rating-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #d1d5db;
+        }
+        
+        .rating-dot.filled {
+            background-color: #10b981;
+        }
+        
+        .specs-icon {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 6px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <div class="container mx-auto px-4 py-8 max-w-6xl">
+        <!-- Header -->
+        <header class="gradient-bg text-white rounded-xl p-6 mb-8 card-shadow">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h1 class="text-2xl md:text-3xl font-bold">Tabla Comparativa de Procesadores Intel</h1>
+                    <p class="mt-2 opacity-90">Análisis para empresa de desarrollo - Proyección 2 años</p>
+                </div>
+                <div class="hidden md:block">
+                    <i class="fas fa-microchip text-4xl opacity-80"></i>
+                </div>
+            </div>
+        </header>
+
+        <!-- Comparison Table -->
+        <section class="bg-white rounded-xl p-6 card-shadow mb-8">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-xl font-semibold text-gray-800">Comparativa técnica por generación</h2>
+                <span class="text-sm px-3 py-1 bg-blue-100 text-blue-800 rounded-full">Enfoque: Desarrollo y transferencia de datos</span>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="w-full">
+                    <thead>
+                        <tr class="text-left border-b-2 border-gray-200">
+                            <th class="pb-4 font-medium text-gray-700">Generación / Modelo</th>
+                            <th class="pb-4 font-medium text-gray-700 text-center">Innovación</th>
+                            <th class="pb-4 font-medium text-gray-700 text-center">Impacto Ambiental</th>
+                            <th class="pb-4 font-medium text-gray-700 text-center">Tiempo Respuesta</th>
+                            <th class="pb-4 font-medium text-gray-700 text-center">Duración Batería</th>
+                            <th class="pb-4 font-medium text-gray-700 text-center">Clasificación</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-100">
+                        <!-- Intel Celeron / Serie N -->
+                        <tr class="hover:bg-gray-50">
+                            <td class="py-4">
+                                <div class="flex items-center">
+                                    <div class="bg-red-100 p-2 rounded-lg">
+                                        <i class="fas fa-microchip text-red-600"></i>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="font-semibold">Celeron® / Serie N</p>
+                                        <p class="text-sm text-gray-500">Básico, bajo consumo</p>
+                                    </div>
+                                </div>
+                                <div class="mt-2 text-xs text-gray-500">
+                                    <div class="flex items-center mt-1">
+                                        <div class="specs-icon bg-gray-100"><i class="fas fa-memory text-gray-600 text-xs"></i></div>
+                                        <span>1-4 núcleos, sin Hyper-Threading</span>
+                                    </div>
+                                    <div class="flex items-center mt-1">
+                                        <div class="specs-icon bg-gray-100"><i class="fas fa-bolt text-gray-600 text-xs"></i></div>
+                                        <span>4-10W TDP, eficiencia energética</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="py-4 text-center">
+                                <div class="rating-cell">
+                                    <div class="rating-dots">
+                                        <div class="rating-dot"></div>
+                                        <div class="rating-dot"></div>
+                                        <div class="rating-dot"></div>
+                                    </div>
+                                </div>
+                                <p class="text-xs text-gray-500 mt-1">Tecnología básica</p>
+                            </td>
+                            <td class="py-4 text-center">
+                                <div class="rating-cell">
+                                    <div class="rating-dots">
+                                        <div class="rating-dot filled"></div>
+                                        <div class="rating-dot filled"></div>
+                                        <div class="rating-dot"></div>
+                                    </div>
+                                </div>
+                                <p class="text-xs text-gray-500 mt-1">Bajo consumo</p>
+                            </td>
+                            <td class="py-4 text-center">
+                                <div class="rating-cell">
+                                    <div class="rating-dots">
+                                        <div class="rating-dot"></div>
+                                        <div class="rating-dot"></div>
+                                        <div class="rating-dot"></div>
+                                    </div>
+                                </div>
+                                <p class="text-xs text-gray-500 mt-1">Lento para desarrollo</p>
+                            </td>
+                            <td class="py-4 text-center">
+                                <div class="rating-cell">
+                                    <div class="rating-dots">
+                                        <div class="rating-dot filled"></div>
+                                        <div class="rating-dot filled"></div>
+                                        <div class="rating-dot filled"></div>
+                                    </div>
+                                </div>
+                                <p class="text-xs text-gray-500 mt-1">Excelente autonomía</p>
+                            </td>
+                            <td class="py-4 text-center">
+                                <span class="bg-red-100 text-red-800 font-medium px-3 py-1 rounded-full text-sm">1 año</span>
+                                <p class="text-xs text-gray-500 mt-1">Solo tareas básicas</p>
+                            </td>
+                        </tr>
+                        
+                        <!-- Intel Pentium -->
+                        <tr class="hover:bg-gray-50">
+                            <td class="py-4">
+                                <div class="flex items-center">
+                                    <div class="bg-orange-100 p-2 rounded-lg">
+                                        <i class="fas fa-compress-alt text-orange-600"></i>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="font-semibold">Pentium® Gold/Silver</p>
+                                        <p class="text-sm text-gray-500">Rendimiento equilibrado</p>
+                                    </div>
+                                </div>
+                                <div class="mt-2 text-xs text-gray-500">
+                                    <div class="flex items-center mt-1">
+                                        <div class="specs-icon bg-gray-100"><i class="fas fa-memory text-gray-600 text-xs"></i></div>
+                                        <span>2-4 núcleos, con Hyper-Threading</span>
+                                    </div>
+                                    <div class="flex items-center mt-1">
+                                        <div class="specs-icon bg-gray-100"><i class="fas fa-bolt text-gray-600 text-xs"></i></div>
+                                        <span>6-15W TDP, buen equilibrio</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="py-4 text-center">
+                                <div class="rating-cell">
+                                    <div class="rating-dots">
+                                        <div class="rating-dot"></div>
+                                        <div class="rating-dot"></div>
+                                        <div class="rating-dot"></div>
+                                    </div>
+                                </div>
+                                <p class="text-xs text-gray-500 mt-1">Tecnología estándar</p>
+                            </td>
+                            <td class="py-4 text-center">
+                                <div class="rating-cell">
+                                    <div class="rating-dots">
+                                        <div class="rating-dot filled"></div>
+                                        <div class="rating-dot filled"></div>
+                                        <div class="rating-dot"></div>
+                                    </div>
+                                </div>
+                                <p class="text-xs text-gray-500 mt-1">Consumo moderado</p>
+                            </td>
+                            <td class="py-4 text-center">
+                                <div class="rating-cell">
+                                    <div class="rating-dots">
+                                        <div class="rating-dot"></div>
+                                        <div class="rating-dot"></div>
+                                        <div class="rating-dot"></div>
+                                    </div>
+                                </div>
+                                <p class="text-xs text-gray-500 mt-1">Adecuado para ofimática</p>
+                            </td>
+                            <td class="py-4 text-center">
+                                <div class="rating-cell">
+                                    <div class="rating-dots">
+                                        <div class="rating-dot filled"></div>
+                                        <div class="rating-dot filled"></div>
+                                        <div class="rating-dot"></div>
+                                    </div>
+                                </div>
+                                <p class="text-xs text-gray-500 mt-1">Buena autonomía</p>
+                            </td>
+                            <td class="py-4 text-center">
+                                <span class="bg-orange-100 text-orange-800 font-medium px-3 py-1 rounded-full text-sm">2 años</span>
+                                <p class="text-xs text-gray-500 mt-1">Uso general limitado</p>
+                            </td>
+                        </tr>
+                        
+                        <!-- Intel Core i3 -->
+                        <tr class="hover:bg-gray-50">
+                            <td class="py-4">
+                                <div class="flex items-center">
+                                    <div class="bg-yellow-100 p-2 rounded-lg">
+                                        <i class="fas fa-cogs text-yellow-600"></i>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="font-semibold">Core™ i3 (8th-10th Gen)</p>
+                                        <p class="text-sm text-gray-500">Entrada a rendimiento</p>
+                                    </div>
+                                </div>
+                                <div class="mt-2 text-xs text-gray-500">
+                                    <div class="flex items-center mt-1">
+                                        <div class="specs-icon bg-gray-100"><i class="fas fa-memory text-gray-600 text-xs"></i></div>
+                                        <span>4 núcleos, 8 hilos, Turbo Boost</span>
+                                    </div>
+                                    <div class="flex items-center mt-1">
+                                        <div class="specs-icon bg-gray-100"><i class="fas fa-bolt text-gray-600 text-xs"></i></div>
+                                        <span>15-28W TDP, rendimiento eficiente</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="py-4 text-center">
+                                <div class="rating-cell">
+                                    <div class="rating-dots">
+                                        <div class="rating-dot filled"></div>
+                                        <div class="rating-dot"></div>
+                                        <div class="rating-dot"></div>
+                                    </div>
+                                </div>
+                                <p class="text-xs text-gray-500 mt-1">Tecnología actual</p>
+                            </td>
+                            <td class="py-4 text-center">
+                                <div class="rating-cell">
+                                    <div class="rating-dots">
+                                        <div class="rating-dot filled"></div>
+                                        <div class="rating-dot"></div>
+                                        <div class="rating-dot"></div>
+                                    </div>
+                                </div>
+                                <p class="text-xs text-gray-500 mt-1">Consumo moderado-alto</p>
+                            </td>
+                            <td class="py-4 text-center">
+                                <div class="rating-cell">
+                                    <div class="rating-dots">
+                                        <div class="rating-dot filled"></div>
+                                        <div class="rating-dot"></div>
+                                        <div class="rating-dot"></div>
+                                    </div>
+                                </div>
+                                <p class="text-xs text-gray-500 mt-1">Adecuado para desarrollo</p>
+                            </td>
+                            <td class="py-4 text-center">
+                                <div class="rating-cell">
+                                    <div class="rating-dots">
+                                        <div class="rating-dot filled"></div>
+                                        <div class="rating-dot"></div>
+                                        <div class="rating-dot"></div>
+                                    </div>
+                                </div>
+                                <p class="text-xs text-gray-500 mt-1">Autonomía regular</p>
+                            </td>
+                            <td class="py-4 text-center">
+                                <span class="bg-yellow-100 text-yellow-800 font-medium px-3 py-1 rounded-full text-sm">3 años</span>
+                                <p class="text-xs text-gray-500 mt-1">Desarrollo básico</p>
+                            </td>
+                        </tr>
+                        
+                        <!-- Intel Core i5/i7 8th Gen -->
+                        <tr class="hover:bg-gray-50">
+                            <td class="py-4">
+                                <div class="flex items-center">
+                                    <div class="bg-green-100 p-2 rounded-lg">
+                                        <i class="fas fa-rocket text-green-600"></i>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="font-semibold">Core™ i5/i7 (8th Gen)</p>
+                                        <p class="text-sm text-gray-500">Alto rendimiento</p>
+                                    </div>
+                                </div>
+                                <div class="mt-2 text-xs text-gray-500">
+                                    <div class="flex items-center mt-1">
+                                        <div class="specs-icon bg-gray-100"><i class="fas fa-memory text-gray-600 text-xs"></i></div>
+                                        <span>6 núcleos, 12 hilos, Turbo Boost 2.0</span>
+                                    </div>
+                                    <div class="flex items-center mt-1">
+                                        <div class="specs-icon bg-gray-100"><i class="fas fa-bolt text-gray-600 text-xs"></i></div>
+                                        <span>45-65W TDP, alto rendimiento</span>
+                                    </div>
+                                    <div class="flex items-center mt-1">
+                                        <div class="specs-icon bg-gray-100"><i class="fas fa-shield-alt text-gray-600 text-xs"></i></div>
+                                        <span>Hardware Shield, AES-NI</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="py-4 text-center">
+                                <div class="rating-cell">
+                                    <div class="rating-dots">
+                                        <div class="rating-dot filled"></div>
+                                        <div class="rating-dot filled"></div>
+                                        <div class="rating-dot"></div>
+                                    </div>
+                                </div>
+                                <p class="text-xs text-gray-500 mt-1">Tecnología avanzada</p>
+                            </td>
+                            <td class="py-4 text-center">
+                                <div class="rating-cell">
+                                    <div class="rating-dots">
+                                        <div class="rating-dot"></div>
+                                        <div class="rating-dot"></div>
+                                        <div class="rating-dot"></div>
+                                    </div>
+                                </div>
+                                <p class="text-xs text-gray-500 mt-1">Alto consumo energético</p>
+                            </td>
+                            <td class="py-4 text-center">
+                                <div class="rating-cell">
+                                    <div class="rating-dots">
+                                        <div class="rating-dot filled"></div>
+                                        <div class="rating-dot filled"></div>
+                                        <div class="rating-dot"></div>
+                                    </div>
+                                </div>
+                                <p class="text-xs text-gray-500 mt-1">Excelente para desarrollo</p>
+                            </td>
+                            <td class="py-4 text-center">
+                                <div class="rating-cell">
+                                    <div class="rating-dots">
+                                        <div class="rating-dot"></div>
+                                        <div class="rating-dot"></div>
+                                        <div class="rating-dot"></div>
+                                    </div>
+                                </div>
+                                <p class="text-xs text-gray-500 mt-1">Baja autonomía</p>
+                            </td>
+                            <td class="py-4 text-center">
+                                <span class="bg-blue-100 text-blue-800 font-medium px-3 py-1 rounded-full text-sm">4 años</span>
+                                <p class="text-xs text-gray-500 mt-1">Desarrollo avanzado</p>
+                            </td>
+                        </tr>
+                        
+                        <!-- Intel Core Ultra -->
+                        <tr class="hover:bg-gray-50">
+                            <td class="py-4">
+                                <div class="flex items-center">
+                                    <div class="bg-blue-100 p-2 rounded-lg">
+                                        <i class="fas fa-bolt text-blue-600"></i>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="font-semibold">Core™ Ultra (Última Gen)</p>
+                                        <p class="text-sm text-gray-500">Vanguardia tecnológica</p>
+                                    </div>
+                                </div>
+                                <div class="mt-2 text-xs text-gray-500">
+                                    <div class="flex items-center mt-1">
+                                        <div class="specs-icon bg-gray-100"><i class="fas fa-brain text-gray-600 text-xs"></i></div>
+                                        <span>NPU para IA, GPU Arc™, núcleos híbridos</span>
+                                    </div>
+                                    <div class="flex items-center mt-1">
+                                        <div class="specs-icon bg-gray-100"><i class="fas fa-bolt text-gray-600 text-xs"></i></div>
+                                        <span>28-45W TDP, eficiencia optimizada</span>
+                                    </div>
+                                    <div class="flex items-center mt-1">
+                                        <div class="specs-icon bg-gray-100"><i class="fas fa-shield-alt text-gray-600 text-xs"></i></div>
+                                        <span>SGX, Boot Guard, Hardware Shield</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="py-4 text-center">
+                                <div class="rating-cell">
+                                    <div class="rating-dots">
+                                        <div class="rating-dot filled"></div>
+                                        <div class="rating-dot filled"></div>
+                                        <div class="rating-dot filled"></div>
+                                    </div>
+                                </div>
+                                <p class="text-xs text-gray-500 mt-1">Tecnología de vanguardia</p>
+                            </td>
+                            <td class="py-4 text-center">
+                                <div class="rating-cell">
+                                    <div class="rating-dots">
+                                        <div class="rating-dot filled"></div>
+                                        <div class="rating-dot filled"></div>
+                                        <div class="rating-dot"></div>
+                                    </div>
+                                </div>
+                                <p class="text-xs text-gray-500 mt-1">Eficiencia energética</p>
+                            </td>
+                            <td class="py-4 text-center">
+                                <div class="rating-cell">
+                                    <div class="rating-dots">
+                                        <div class="rating-dot filled"></div>
+                                        <div class="rating-dot filled"></div>
+                                        <div class="rating-dot filled"></div>
+                                    </div>
+                                </div>
+                                <p class="text-xs text-gray-500 mt-1">Óptimo para desarrollo</p>
+                            </td>
+                            <td class="py-4 text-center">
+                                <div class="rating-cell">
+                                    <div class="rating-dots">
+                                        <div class="rating-dot filled"></div>
+                                        <div class="rating-dot filled"></div>
+                                        <div class="rating-dot"></div>
+                                    </div>
+                                </div>
+                                <p class="text-xs text-gray-500 mt-1">Buena autonomía</p>
+                            </td>
+                            <td class="py-4 text-center">
+                                <span class="bg-green-100 text-green-800 font-medium px-3 py-1 rounded-full text-sm">5 años</span>
+                                <p class="text-xs text-gray-500 mt-1">Desarrollo y IA</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="mt-6 flex items-center text-sm text-gray-500">
+                <i class="fas fa-info-circle mr-2"></i>
+                <p>Clasificación basada en análisis técnico para empresa de desarrollo - Prioridad: transferencia de datos y seguridad</p>
+            </div>
+        </section>
+
+        <!-- Recommendations Section -->
+        <section class="bg-white rounded-xl p-6 card-shadow">
+            <h2 class="text-xl font-semibold text-gray-800 mb-4">Recomendaciones para XIANTANG</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="font-semibold text-gray-700 mb-3">Para desarrollo y transferencia de datos:</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <span class="bg-blue-100 text-blue-800 rounded-full w-5 h-5 flex items-center justify-center text-xs mt-0.5 mr-2">✓</span>
+                            <span><span class="font-medium">Core™ Ultra</span> - Ideal para desarrollo con IA y procesamiento de datos</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="bg-blue-100 text-blue-800 rounded-full w-5 h-5 flex items-center justify-center text-xs mt-0.5 mr-2">✓</span>
+                            <span><span class="font-medium">Core™ i7/i5 (8th Gen+)</span> - Balance perfecto entre rendimiento y costo</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="bg-blue-100 text-blue-800 rounded-full w-5 h-5 flex items-center justify-center text-xs mt-0.5 mr-2">✓</span>
+                            <span><span class="font-medium">Hardware Shield</span> - Essential para seguridad en transferencias</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-semibold text-gray-700 mb-3">Para optimización energética:</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <span class="bg-green-100 text-green-800 rounded-full w-5 h-5 flex items-center justify-center text-xs mt-0.5 mr-2">✓</span>
+                            <span><span class="font-medium">Core™ Ultra</span> - Mayor eficiencia con NPU dedicada</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="bg-green-100 text-green-800 rounded-full w-5 h-5 flex items-center justify-center text-xs mt-0.5 mr-2">✓</span>
+                            <span><span class="font-medium">Serie U</span> - Procesadores de bajo consumo para equipos secundarios</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="bg-green-100 text-green-800 rounded-full w-5 h-5 flex items-center justify-center text-xs mt-0.5 mr-2">✓</span>
+                            <span><span class="font-medium">Tecnología Intel® Adaptix</span> - Optimización dinámica de energía</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-6 p-4 bg-gray-50 rounded-lg">
+                <h3 class="font-semibold text-gray-800 mb-2">Plan de Implementación para 2 Años</h3>
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
+                    <div class="mb-4 md:mb-0">
+                        <div class="flex items-center">
+                            <span class="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm mr-2">1</span>
+                            <span class="font-medium">Año 1: Core™ i7/i5 (8th Gen) + Hardware de seguridad</span>
+                        </div>
+                        <div class="flex items-center mt-2">
+                            <span class="bg-green-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm mr-2">2</span>
+                            <span class="font-medium">Año 2: Migración a Core™ Ultra para capacidades de IA</span>
+                        </div>
+                    </div>
+                 
+                </div>
+                
+            </div>
+            
+        </section>
+
+        <section class="bg-white mt-10 rounded-xl p-6 card-shadow w-full mb-8">
+            <div class="flex items-center mb-3">
+                <span class="bg-blue-100 text-intelBlue rounded-lg p-2 mr-3"><i class="fas fa-award"></i></span>
+                <h2 class="text-xl font-semibold text-intelBlue tracking-wide">Conclusión</h2>
+            </div>
+            <p class="text-gray-700 text-base text-justify mb-2">
+                El análisis realizado sobre las generaciones de procesadores Intel evidencia una evolución tecnológica orientada a satisfacer las crecientes demandas de rendimiento, eficiencia energética y seguridad en entornos empresariales. La información comparativa presentada respalda la importancia de seleccionar arquitecturas recientes para optimizar los procesos de desarrollo y transferencia de datos, así como para fortalecer la sostenibilidad y la protección de los activos digitales de la organización.
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 mt-4">
+                <div class="flex items-center bg-gray-50 rounded-lg p-3 flex-1">
+                    <i class="fas fa-bolt text-success text-xl mr-2"></i>
+                    <span class="text-gray-700 text-sm">Rendimiento y capacidad de respuesta mejorados.</span>
+                </div>
+                <div class="flex items-center bg-gray-50 rounded-lg p-3 flex-1">
+                    <i class="fas fa-leaf text-green-500 text-xl mr-2"></i>
+                    <span class="text-gray-700 text-sm">Eficiencia energética y menor impacto ambiental.</span>
+                </div>
+                <div class="flex items-center bg-gray-50 rounded-lg p-3 flex-1">
+                    <i class="fas fa-shield-alt text-blue-500 text-xl mr-2"></i>
+                    <span class="text-gray-700 text-sm">Avances en seguridad y protección de datos.</span>
+                </div>
+            </div>
+            <div class="flex items-center mt-4">
+                <i class="fas fa-lightbulb text-warning text-lg mr-2"></i>
+                <span class="text-gray-600 italic text-sm">La elección informada de procesadores es clave para el crecimiento y la competitividad a largo plazo.</span>
+            </div>
+        </section>
+</body>
+</html>
